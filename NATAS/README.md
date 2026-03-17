@@ -49,7 +49,7 @@ URL:      http://natas0.natas.labs.overthewire.org
 ```
 
 _____________
-# Level 0
+# Level 0 
 
 ## Solution
 
