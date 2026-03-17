@@ -1023,8 +1023,7 @@ _______
 - In this exercise, we return to **databases**, and in fact the application uses the **same code as Level 14–15**, with one very important exception:  
     when checking whether a user exists, the responses in the code are **commented out**. This makes the challenge harder because there is **no visible output** to tell us whether a condition is true or false.
 
-<img width="879" height="699" alt="Captura de pantalla 2026-01-06 045945" src="https://github.com/user-attachments/assets/260aa4ee-f9d7-4d17-97de-6d6ecf243580" />
-
+<img width="879" height="699" alt="Captura de pantalla 2026-01-06 045945" src="https://github.com/user-attachments/assets/f9580d7f-a1a2-4b8e-8602-1db744ca86f6" />
 
 - My first approach was to try **`SELECT SLEEP(10)`** in order to use **time** as a factor to determine whether a request was correct or not, but this did not work as expected.
 
@@ -1161,9 +1160,7 @@ This script takes a long time to run, and understanding its **control flow** is 
     
     - If a network or connection error occurs, the script waits briefly and retries instead of failing completely
     
-<img width="592" height="789" alt="Captura de pantalla 2026-01-06 210745" src="https://github.com/user-attachments/assets/56e4098d-840e-4568-8504-2327b85bc641" />
-
-
+<img width="592" height="789" alt="Captura de pantalla 2026-01-06 210745" src="https://github.com/user-attachments/assets/358570b2-bd04-475b-bd7d-481c82fe15e2" />
 
 ## Solution
 
@@ -1193,10 +1190,9 @@ ____________
 
 - This exercise presents a scenario where we work with **cookies** and, more importantly, **`$_SESSION`** (sessions in general). Let’s analyze the source code:
 
-<img width="1010" height="611" alt="Pasted image 20260111145434" src="https://github.com/user-attachments/assets/211c6579-3d5b-4bb4-9af1-9f4ce1432f51" />
+<img width="1010" height="611" alt="Pasted image 20260111145434" src="https://github.com/user-attachments/assets/ffd6e462-e666-4347-88bf-6d9e9ba1f683" />
 
-<img width="1140" height="630" alt="Captura de pantalla 2026-01-11 145752" src="https://github.com/user-attachments/assets/d17bebb3-abc2-426a-9af2-6479d3d394ba" />
-
+<img width="1140" height="630" alt="Captura de pantalla 2026-01-11 145752" src="https://github.com/user-attachments/assets/095c3e4e-6193-41af-a422-32890cdabf04" />
 
 - In the first part of the code, we identify three functions. Let’s go one by one:
 
@@ -1329,10 +1325,9 @@ ________________
 
 - This exercise presents essentially the same source code as the previous level, but with a small change: the server expects the session identifier to be **hex-encoded**, which does **not** provide real security.
     
-<img width="504" height="94" alt="Captura de pantalla 2026-01-11 230443" src="https://github.com/user-attachments/assets/a9a823c8-f2f1-4378-974a-e440458bd411" />
+<img width="504" height="94" alt="Captura de pantalla 2026-01-11 230443" src="https://github.com/user-attachments/assets/7adeb827-138e-451a-a677-7b02cd15556b" />
 
-<img width="704" height="870" alt="Captura de pantalla 2026-01-11 165105" src="https://github.com/user-attachments/assets/6c89ff92-913c-4854-a289-45391d8a5714" />
-
+<img width="704" height="870" alt="Captura de pantalla 2026-01-11 165105" src="https://github.com/user-attachments/assets/38ab511e-794c-441a-aa11-333d9a78e1ff" />
 
 - This means that simply looping from 1 to 640 like in the previous level will **no longer work directly**, because we now need to account for the HEX encoding.
     
@@ -1369,8 +1364,7 @@ for i in range(1, 641):
 
 - This script works and produces the expected result:
 
-<img width="808" height="415" alt="Captura de pantalla 2026-01-12 151429 1" src="https://github.com/user-attachments/assets/28bcc7ec-239e-44d5-918f-7ccc84b7f499" />
-
+<img width="808" height="415" alt="Captura de pantalla 2026-01-12 151429 1" src="https://github.com/user-attachments/assets/750457a4-7f40-444d-b237-35c10467338d" />
 
 - To convert a value to HEX, we can use:
 
@@ -1388,8 +1382,7 @@ print(hex_encoded)
 
 - Entering this value as the cookie proves that it works:
 
-<img width="1093" height="589" alt="Captura de pantalla 2026-01-12 150626" src="https://github.com/user-attachments/assets/66078615-d31c-452c-ac3a-62e6501d0bfa" />
-
+<img width="1093" height="589" alt="Captura de pantalla 2026-01-12 150626" src="https://github.com/user-attachments/assets/8b1a99e1-9535-4c01-bfb3-06311a5fe0d1" />
 
 - ✅ Password obtained:
 
@@ -1423,11 +1416,11 @@ ___________
 
 - This exercise presents a scenario closer to **real-life situations**, where there are no obvious hints or payloads showing where the vulnerability is. It requires a **deep understanding of the source code** to spot subtle details that can have a major impact. Let's examine the code:
 
-<img width="1728" height="769" alt="Pasted image 20260113210954" src="https://github.com/user-attachments/assets/00971555-308d-436e-a90f-cee412f02e33" />
+<img width="1728" height="769" alt="Pasted image 20260113210954" src="https://github.com/user-attachments/assets/9ff7f732-9e3b-4cc0-92a6-474d4ba12605" />
 
-<img width="838" height="747" alt="Captura de pantalla 2026-01-13 211634" src="https://github.com/user-attachments/assets/1afea8e6-2d25-4199-82d4-06fcaceb1a90" />
+<img width="838" height="747" alt="Captura de pantalla 2026-01-13 211634" src="https://github.com/user-attachments/assets/84797ad7-8e2e-4a42-a80e-80055823f58a" />
 
-<img width="729" height="631" alt="Captura de pantalla 2026-01-13 211757" src="https://github.com/user-attachments/assets/5db7f850-1713-476b-b7a1-c0978c40fc6a" />
+<img width="729" height="631" alt="Captura de pantalla 2026-01-13 211757" src="https://github.com/user-attachments/assets/c1d44e1c-d1ab-4813-8063-067c038af4ed" />
 
 - I highlighted certain parts that are critical and will explain them step by step.
     
@@ -1502,8 +1495,7 @@ This exercise introduces several critical concepts:
     
     - Since the `admin` flag in the session is now set to `1`, the page prints the credentials.
         
-<img width="1023" height="368" alt="Captura de pantalla 2026-01-13 221726" src="https://github.com/user-attachments/assets/231f3daa-0ae9-4477-b1a4-6337513950fc" />
-
+<img width="1023" height="368" alt="Captura de pantalla 2026-01-13 221726" src="https://github.com/user-attachments/assets/400e9d0d-b79c-4507-8cde-9ad7a5054f84" />
 
 - Highlighted in yellow: confirmation of the **session** and the **PHPSESSID**:
     
