@@ -5,13 +5,13 @@ ___________________
 
 ### GitHub
 
-- [Level 0](https://www.google.com/search?q=%23level-0)
-- [Level 1](https://www.google.com/search?q=%23level-1)
-- [Level 2](https://www.google.com/search?q=%23level-2)
-- [Level 3](https://www.google.com/search?q=%23level-3)
-- [Level 4](https://www.google.com/search?q=%23level-4)
-- [Level 5](https://www.google.com/search?q=%23level-5)
-- [Level 6](https://www.google.com/search?q=%23level-6)
+- [Level 0](#level-0)
+- [Level 1](#level-1)
+- [Level 2](#level-2)
+- [Level 3](#level-3)
+- [Level 4](#level-4)
+- [Level 5](#level-5)
+- [Level 6](#level-6)
 
 ---
 
