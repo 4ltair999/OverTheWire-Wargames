@@ -55,7 +55,8 @@ _____________
 
 To understand how the page handled sensitive information, the HTML was inspected using the browser’s **Element Inspector**. While reviewing the DOM, a search for relevant keywords such as `password` was performed. This revealed that the credential for the next level was directly embedded in the HTML.
 
-<img width="1258" height="609" alt="Captura de pantalla 2025-12-06 165642" src="https://github.com/user-attachments/assets/2163b6b1-1b48-416b-9525-7eec8c85fc52" />
+<img width="1258" height="609" alt="Captura de pantalla 2025-12-06 165642" src="https://github.com/user-attachments/assets/c6172573-1d83-427e-b94a-4e585235f653" />
+
 
 ```
 0nzCigAq7t2iALyvU9xcHlYN4MlkIwlq 
