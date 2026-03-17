@@ -79,7 +79,7 @@ This level follows the same approach as the previous one. Although right-click i
 
 By accessing the Developer Tools and inspecting the DOM, the password for the next level was found directly in the HTML content.
 
-<img width="1289" height="624" alt="Captura de pantalla 2025-12-06 171136" src="https://github.com/user-attachments/assets/f4bac8a4-5f58-4f3a-8b86-76b34334edf8" />
+<img width="1289" height="624" alt="Captura de pantalla 2025-12-06 171136" src="https://github.com/user-attachments/assets/96e0063d-44dd-48e1-9849-595a43a2a0f7" />
 
 ```
 TguMNxKo1DSa1tujBLuZJnDUlCcUAPlI
@@ -99,15 +99,18 @@ _________________________
 
 This level introduces a slightly higher difficulty, as it requires looking beyond the visible HTML content. While inspecting the page, an image reference was found that did not appear visually on the website, which made it suspicious.
 
-<img width="1457" height="585" alt="Captura de pantalla 2025-12-06 231035" src="https://github.com/user-attachments/assets/02bcb116-ba73-421b-a1ad-d3a130e9d381" />
+<img width="1457" height="585" alt="Captura de pantalla 2025-12-06 231035" src="https://github.com/user-attachments/assets/c441446e-986e-46c5-bb5e-eb2850e6c3ae" />
+
 
 To understand what this image was, the path `files/pixel.png` was accessed directly. The image itself did not reveal any useful information. However, accessing the `/files` directory instead showed that directory listing was enabled.
 
-<img width="726" height="358" alt="Captura de pantalla 2025-12-06 231646" src="https://github.com/user-attachments/assets/71809160-5b38-44d4-900f-1316df8631d1" />
+<img width="726" height="358" alt="Captura de pantalla 2025-12-06 231646" src="https://github.com/user-attachments/assets/a3d513e1-5452-4523-85bd-b3f8baec71c8" />
+
 
 Inside this directory, a file named `users.txt` was found. Opening this file revealed a list of usernames and passwords. One of these credentials corresponded to the next level.
 
-<img width="749" height="241" alt="Captura de pantalla 2025-12-06 231843" src="https://github.com/user-attachments/assets/96b2418a-fb1d-45fa-9089-ca7fac2e37b5" />
+<img width="749" height="241" alt="Captura de pantalla 2025-12-06 231843" src="https://github.com/user-attachments/assets/d45831f8-c10d-4ae7-a2ca-c6d087dd235b" />
+
 
 Using this password to access the next level confirmed that it was valid.
 
@@ -149,12 +152,11 @@ If the file exists, we analyze the disallowed paths and manually try to access t
 - **Crawlers (or spiders):** Automated programs that browse websites to index content. A common example is **Googlebot**, but there are many others.
 - **Robots:** A broader term for automated programs interacting with websites, including crawlers, scrapers, and bots.
 
-
 The Robots Exclusion Protocol is not obsolete, but its purpose is limited to **guiding crawlers**, not protecting content. Proper authentication and access controls must always be enforced server-side.
 
 As a pentester, you should assume that most websites you test will have a `robots.txt` file, and you should always check it early during reconnaissance.
 
-<img width="1060" height="115" alt="Captura de pantalla 2025-12-07 175333" src="https://github.com/user-attachments/assets/9f5e3a2a-d907-4ec5-8d66-461b6df76975" />
+<img width="1060" height="115" alt="Captura de pantalla 2025-12-07 175333" src="https://github.com/user-attachments/assets/15e62020-a4bb-493a-a25a-7b316b985c9b" />
 
 - From the `robots.txt` file, we discover a hidden directory and navigate to:
 
@@ -162,11 +164,12 @@ As a pentester, you should assume that most websites you test will have a `robot
 /s3cr3t/
 ```
 
-<img width="663" height="307" alt="Captura de pantalla 2025-12-07 175603" src="https://github.com/user-attachments/assets/a5fa5059-c6b8-4881-b718-e208723a5b21" />
+<img width="663" height="307" alt="Captura de pantalla 2025-12-07 175603" src="https://github.com/user-attachments/assets/4050988b-8418-458a-9ebb-cbb045d7b8af" />
 
 - Inside that directory, we find the file **users.txt**.
 
-<img width="726" height="125" alt="Captura de pantalla 2025-12-07 175712" src="https://github.com/user-attachments/assets/00257f99-9bb0-4d6e-9162-d1bb2aa1c0bc" />
+<img width="726" height="125" alt="Captura de pantalla 2025-12-07 175712" src="https://github.com/user-attachments/assets/1c739365-80f1-403e-b484-440d7fe770c1" />
+
 
 - The file contains the password for the next level:
 
@@ -182,7 +185,7 @@ ____________
 
 ## Level 4
 
-<img width="602" height="194" alt="Captura de pantalla 2025-12-13 043123" src="https://github.com/user-attachments/assets/0e5d8c72-e4bc-4c08-b179-064e86f2350b" />
+<img width="602" height="194" alt="Captura de pantalla 2025-12-13 043123" src="https://github.com/user-attachments/assets/1799dd26-2457-4d0e-af6e-818fe3a16f54" />
 
 ## Solution
 
@@ -198,7 +201,7 @@ For example, consider a **password reset** page that includes a link to a social
 
 - Based on this, we need to capture the request and manipulate the **Referer** header, because this level requires the request to come from **natas5** in order to obtain the password.
 
-<img width="631" height="396" alt="Captura de pantalla 2025-12-13 043332" src="https://github.com/user-attachments/assets/a009a66b-67c5-48cc-a4ff-04e675a7f055" />
+<img width="631" height="396" alt="Captura de pantalla 2025-12-13 043332" src="https://github.com/user-attachments/assets/c072c722-9cae-4157-afb5-7a4988d7e8b8" />
 
 - Simply changing `natas4` to `natas5` in the URL is not enough, and it will not work.
 - The practical objective of this level is to understand that **Burp Suite** allows us to intercept the HTTP request and modify the **Referer** header to `natas5`, as required by the application, in order to retrieve the password.
@@ -227,7 +230,7 @@ ____________
 
 - By checking the **browser storage**, I noticed that it was possible to manually change the value from `0` to `1`. After doing this, the application treated me as authenticated and revealed the password.
 
-<img width="1091" height="437" alt="Captura de pantalla 2025-12-14 021058" src="https://github.com/user-attachments/assets/8173a789-6f6d-453a-9a97-faa18d0cbe45" />
+<img width="1091" height="437" alt="Captura de pantalla 2025-12-14 021058" src="https://github.com/user-attachments/assets/0ef89799-9686-4895-ac99-25830b85bf52" />
 
 ```
 0RoJwHdSKWFTYR5WuiAewauSuNaBXned
@@ -247,11 +250,11 @@ ____________
 
 - In this exercise, we need to inspect the page source using **Ctrl + U**.
 
-<img width="1063" height="555" alt="Captura de pantalla 2025-12-14 053320" src="https://github.com/user-attachments/assets/ee3308da-95e8-4e47-a6a6-febe246a082b" />
+<img width="1063" height="555" alt="Captura de pantalla 2025-12-14 053320" src="https://github.com/user-attachments/assets/98c625fa-b946-45b3-9c2b-0a2ec71ce0f7" />
 
 - From the source code, we find a reference to a specific file. When we add this fragment to the main URL, the following content appears:
 
-<img width="1015" height="553" alt="Captura de pantalla 2025-12-14 054102" src="https://github.com/user-attachments/assets/9313d143-b7ee-4d70-ba39-aad4e8303fe2" />
+<img width="1015" height="553" alt="Captura de pantalla 2025-12-14 054102" src="https://github.com/user-attachments/assets/93774483-9f9e-43ff-89fc-f3dc8be7452e" />
 
 ```
 FOEIUWGHFEEUHOFUOIU
@@ -259,7 +262,7 @@ FOEIUWGHFEEUHOFUOIU
 
 - If we take this value and use it in the search field, it reveals the password for the next level.
 
-<img width="598" height="213" alt="Captura de pantalla 2025-12-14 052835" src="https://github.com/user-attachments/assets/d6bbcb21-d894-4071-a193-94f33237830f" />
+<img width="598" height="213" alt="Captura de pantalla 2025-12-14 052835" src="https://github.com/user-attachments/assets/d339d27c-bdd1-4565-9666-854e07245db9" />
 
 ```
 bmg8SvU1LizuWjx3y7xkNERkHxGre0GS
@@ -285,11 +288,11 @@ hint: password for webuser natas8 is in /etc/natas_webpass/natas8
 
 - After reviewing the page in more detail, I noticed something relevant: an **`href`** parameter. Taking into account how it works, and the fact that the main page contains two redirection points, we can test whether this **`href`** can be abused.
 
-<img width="962" height="490" alt="Captura de pantalla 2025-12-14 064249" src="https://github.com/user-attachments/assets/16d336c9-1c0e-42f4-a81a-a565ad4dd781" />
+<img width="962" height="490" alt="Captura de pantalla 2025-12-14 064249" src="https://github.com/user-attachments/assets/04f2e582-1afd-42e7-8382-64e00fb77b47" />
 
 - Let’s test whether this **`href`** is properly sanitized by placing the password path we discovered into the **home** path.
 
-<img width="1092" height="695" alt="Captura de pantalla 2025-12-14 063517" src="https://github.com/user-attachments/assets/e7ee33d4-07d6-4c34-8c52-d15e80485586" />
+<img width="1092" height="695" alt="Captura de pantalla 2025-12-14 063517" src="https://github.com/user-attachments/assets/c134f89e-6898-4f3d-b7b8-f02c9ae3a6d5" />
 
 - And it worked. The application redirected us directly to the password:
 
@@ -311,7 +314,7 @@ ______________
 
 - In this exercise, we are led to inspect the page source code.
 
-<img width="1615" height="770" alt="Captura de pantalla 2025-12-14 235920" src="https://github.com/user-attachments/assets/9872af90-97f1-4c7a-8705-f34cccaf417f" />
+<img width="1615" height="770" alt="Captura de pantalla 2025-12-14 235920" src="https://github.com/user-attachments/assets/6fb2f9ee-9a94-4f47-a414-83eea3d42096" />
 
 - It is important to understand how this script works.
 
@@ -338,14 +341,13 @@ ______________
 ZE1ck82lmdGIoErlhQgWND6j2Wzz6b6t
 ```
 
-<img width="894" height="570" alt="Captura de pantalla 2025-12-15 000632" src="https://github.com/user-attachments/assets/fdf2144b-3da4-45e8-b556-c7af77df94d1" />
+<img width="894" height="570" alt="Captura de pantalla 2025-12-15 000632" src="https://github.com/user-attachments/assets/fc586232-0a61-4374-aec5-d9d851bf4e26" />
 
-<img width="345" height="74" alt="Captura de pantalla 2025-12-15 000326" src="https://github.com/user-attachments/assets/a436db58-b2b9-46c0-874d-0b27ee891489" />
+<img width="345" height="74" alt="Captura de pantalla 2025-12-15 000326" src="https://github.com/user-attachments/assets/507fb2d6-d6b3-46e1-b459-bddac490032e" />
 
 - If we submit this value directly in the main page, the application reveals the password.
 
-<img width="898" height="325" alt="Captura de pantalla 2025-12-14 231742 1" src="https://github.com/user-attachments/assets/8a1a46f2-079e-4a32-8ba8-3c1aa957a125" />
-
+<img width="898" height="325" alt="Captura de pantalla 2025-12-14 231742 1" src="https://github.com/user-attachments/assets/d2d928b0-c2ba-4848-81fb-ee45542291d0" />
 
 ```
 ZE1ck82lmdGIoErlhQgWND6j2Wzz6b6t
@@ -363,9 +365,7 @@ ____________________
 
 - In this exercise, we need to pay close attention to how the script in the source code works:
 
-<img width="646" height="267" alt="Captura de pantalla 2025-12-16 033406" src="https://github.com/user-attachments/assets/f62fe755-75c8-4cfb-99c7-aaa3fb0be4fc" />
-
-
+<img width="646" height="267" alt="Captura de pantalla 2025-12-16 033406" src="https://github.com/user-attachments/assets/738f0b14-825f-4b3f-9d89-6be071a4d05c" />
 
 - This script shows us that whatever is entered in the search field is searched within a dictionary. However, the most important part is the use of **`passthru()`**. We need to understand how it works and why it represents a critical security issue.
 ### passthru
@@ -385,9 +385,7 @@ From a security perspective, user input should never be passed directly to `pass
 
 - And it works.
 
-<img width="936" height="463" alt="Captura de pantalla 2025-12-16 040001" src="https://github.com/user-attachments/assets/ab1037b0-1aac-4ac4-8030-2c4f580105a6" />
-
-
+<img width="936" height="463" alt="Captura de pantalla 2025-12-16 040001" src="https://github.com/user-attachments/assets/aafad41e-a4d9-4111-a576-e886a7affb14" />
 
 ```
 t7I5VHvpa14sJTUGV0cbEsbYfFP2dmOu
@@ -406,16 +404,13 @@ __________________
 
 - In this case, certain characters are filtered, which makes direct command execution more difficult.
 
-<img width="520" height="255" alt="Captura de pantalla 2025-12-16 042734" src="https://github.com/user-attachments/assets/cf06b20a-e564-4965-90f5-771b1736e409" />
-
+<img width="520" height="255" alt="Captura de pantalla 2025-12-16 042734" src="https://github.com/user-attachments/assets/fd77676e-4a7d-4dcc-9e10-15e58759eb55" />
 
 - To solve this exercise, we need to rely on characters such as **`.*`**, which are not escaped. These characters have an important meaning: they match files in the **current directory** or files that meet specific pattern requirements.
 
 - By using `.*`, we can see that the application lists the following information:
 
-<img width="769" height="393" alt="Pasted image 20251217025149" src="https://github.com/user-attachments/assets/803031ea-d78a-4758-900a-e93e6cee5097" />
-
-
+<img width="769" height="393" alt="Pasted image 20251217025149" src="https://github.com/user-attachments/assets/ab1b04fa-4f8f-48e7-b7c3-4881e5884bd6" />
 
 - Taking advantage of this behavior, we can try to list the password file using the following payload:
     
@@ -423,8 +418,7 @@ __________________
 .* /etc/natas_webpass/natas11
 ```
 
-<img width="834" height="414" alt="Captura de pantalla 2025-12-17 025435" src="https://github.com/user-attachments/assets/66162df3-54e7-4533-8194-983fce7c2161" />
-
+<img width="834" height="414" alt="Captura de pantalla 2025-12-17 025435" src="https://github.com/user-attachments/assets/261e65bc-6b91-4d9b-abfd-fa4964ebc2f9" />
 
 - And it works.
 
@@ -480,8 +474,7 @@ This is important because:
 
 ## Analysis
 
-<img width="1383" height="727" alt="Pasted image 20251223224136" src="https://github.com/user-attachments/assets/22c0e812-1fbc-40df-ab65-4cc0ef9b560b" />
-
+<img width="1383" height="727" alt="Pasted image 20251223224136" src="https://github.com/user-attachments/assets/54205250-1e53-4b42-8f40-50fa579b552f" />
 
 From the code we deduce:
 
@@ -493,13 +486,11 @@ From the code we deduce:
 
 - The plaintext is JSON-decoded on the server (`json_decode`), meaning the structure matters.
 
-<img width="1313" height="231" alt="Captura de pantalla 2025-12-23 233411" src="https://github.com/user-attachments/assets/90a2c523-076f-4d5f-9fe3-dee9d7ee0f21" />
-
+<img width="1313" height="231" alt="Captura de pantalla 2025-12-23 233411" src="https://github.com/user-attachments/assets/ff0b4956-f84c-4e73-a3f1-0e600d4864da" />
 
 - The **ciphertext** is retrieved from the cookie, which is **Base64-encoded**.
 
-<img width="1666" height="847" alt="Captura de pantalla 2025-12-24 065709" src="https://github.com/user-attachments/assets/f8d2856a-1a03-4e20-ad3e-9c5bd1592ad1" />
-
+<img width="1666" height="847" alt="Captura de pantalla 2025-12-24 065709" src="https://github.com/user-attachments/assets/86bfe766-3b63-4040-94f4-7ab3372afdbb" />
 
 ### Extracting the key (CyberChef)
 
@@ -537,13 +528,11 @@ Now that we have the key:
 
 4. Refresh the page.
 
-<img width="1483" height="770" alt="Captura de pantalla 2025-12-24 071328" src="https://github.com/user-attachments/assets/32653b87-27b6-4014-940a-b706c8f9d2e8" />
-
+<img width="1483" height="770" alt="Captura de pantalla 2025-12-24 071328" src="https://github.com/user-attachments/assets/f5d08c9f-652b-4001-a3a1-a31fa4bcd638" />
 
 This reveals the password:
 
-<img width="908" height="305" alt="Captura de pantalla 2025-12-24 064952" src="https://github.com/user-attachments/assets/926f9603-c1f4-4350-97a5-6fb47b63793d" />
-
+<img width="908" height="305" alt="Captura de pantalla 2025-12-24 064952" src="https://github.com/user-attachments/assets/9583e34c-c408-4fb9-9b35-c62ec0fcbc19" />
 
 ```
 yZdkjAYZRd3R7tq7T5kXMjMJlOIkzDeB
@@ -576,14 +565,11 @@ ___________
 
 - This exercise shows how file uploads can become a serious security risk when they are not properly validated.
 
-<img width="1424" height="519" alt="Captura de pantalla 2025-12-27 124241" src="https://github.com/user-attachments/assets/0a9002e0-af33-4e4b-963f-6a1ac895722c" />
-
-
+<img width="1424" height="519" alt="Captura de pantalla 2025-12-27 124241" src="https://github.com/user-attachments/assets/a59a41f7-6024-4f8c-8a38-4b2718d67f1e" />
 
 - The application allows us to upload a file that is supposedly restricted to the `.jpg` extension. However, inspecting the source code reveals something more interesting.
 
-<img width="854" height="723" alt="Captura de pantalla 2025-12-27 124639" src="https://github.com/user-attachments/assets/fd7e853f-26f9-4d3d-b116-1b719ebe6b6b" />
-
+<img width="854" height="723" alt="Captura de pantalla 2025-12-27 124639" src="https://github.com/user-attachments/assets/8344d9f1-9d21-48b5-9655-b947eba28598" />
 
 - From the code, we can see that the backend is using **PHP** and that the filename is taken directly from `$_POST["filename"]` and concatenated into `$target_path` **without server-side validation**. This results in an **Unrestricted File Upload** vulnerability.
 - Since the server executes PHP, we can upload a malicious file by intercepting the request and changing the extension from `.jpg` to `.php`.
@@ -596,19 +582,15 @@ ___________
 - `passthru()` is ideal here because it sends the command output directly to the browser without truncating or processing it, which is useful when reading sensitive files like passwords.
 - Because the application forces the `.jpg` extension, we intercept the upload request using **Burp Suite** and modify the extension manually.
 
-<img width="756" height="648" alt="Captura de pantalla 2025-12-27 125708" src="https://github.com/user-attachments/assets/0d70c5bb-c040-40b8-bf2b-ffa82f3b43cb" />
-
+<img width="756" height="648" alt="Captura de pantalla 2025-12-27 125708" src="https://github.com/user-attachments/assets/0de88aaf-1b00-43bf-9b66-7dc089bd2374" />
 
 - After forwarding the request, we open the uploaded file using **“Show response in browser”**, which confirms that the file was executed as PHP.
 
-<img width="454" height="19" alt="Captura de pantalla 2025-12-27 130317" src="https://github.com/user-attachments/assets/f56f0289-a31a-4c5a-abf5-8b336184f367" />
-
+<img width="454" height="19" alt="Captura de pantalla 2025-12-27 130317" src="https://github.com/user-attachments/assets/8294ca3f-f01e-45ee-a738-197f1da3142d" />
 
 - Now we execute a command through the web shell to read the password file.
 
-
-<img width="1040" height="117" alt="Captura de pantalla 2025-12-27 130509" src="https://github.com/user-attachments/assets/8881235e-757b-463c-83de-034480729758" />
-
+<img width="1040" height="117" alt="Captura de pantalla 2025-12-27 130509" src="https://github.com/user-attachments/assets/8995398d-dfb2-4e90-9c3a-e43312b7e198" />
 
 `trbs5pCjCrkuSknBBKHhaBxq6Wm1j3LC`
 
@@ -624,8 +606,7 @@ ______________
 
 - This level uses the same upload functionality as the previous one, but with a small and important change in the source code:
 
-<img width="903" height="445" alt="Captura de pantalla 2025-12-27 162028" src="https://github.com/user-attachments/assets/557cb547-0c91-4c3f-81e3-37c8646e55c0" />
-
+<img width="903" height="445" alt="Captura de pantalla 2025-12-27 162028" src="https://github.com/user-attachments/assets/78356661-311f-468c-90ca-1535e71a5476" />
 
 - The application now uses `exif_imagetype()`, which validates a file by checking its **magic bytes** instead of trusting the file extension.
 
@@ -649,9 +630,7 @@ ffd8 ffe0
 
 - The correct approach is to upload a **real image**, intercept the request, and then modify the payload in **Burp Suite**.
 
-
-<img width="908" height="556" alt="Captura de pantalla 2025-12-31 165145" src="https://github.com/user-attachments/assets/2e7fb16b-c081-4d67-918f-d6a832075753" />
-
+<img width="908" height="556" alt="Captura de pantalla 2025-12-31 165145" src="https://github.com/user-attachments/assets/40a81adc-f946-4ccf-b2d9-e79905839b66" />
 
 - Breaking this down:
     
@@ -667,12 +646,11 @@ ffd8 ffe0
 
 - For comparison, this is how the request looks before modification:
 
-<img width="999" height="630" alt="Captura de pantalla 2025-12-31 170541" src="https://github.com/user-attachments/assets/828bf19f-a6d5-42eb-8cce-1babb9d7a5b4" />
+ <img width="999" height="630" alt="Captura de pantalla 2025-12-31 170541" src="https://github.com/user-attachments/assets/9d21a91b-3e13-447b-ab5b-56e4b4470910" />
 
 - Once uploaded, executing the file gives us the password:
-
-<img width="794" height="207" alt="Captura de pantalla 2025-12-31 172003" src="https://github.com/user-attachments/assets/8f037ade-4eef-4323-8e90-c4aab326c069" />
-
+  
+<img width="794" height="207" alt="Captura de pantalla 2025-12-31 172003" src="https://github.com/user-attachments/assets/9ecaaff9-9192-4526-a6fb-b750e95fef01" />
 
 ```
 z3UYcr4v4uBpeX8f7EZbMHlzK4UR2XtQ
@@ -691,15 +669,15 @@ _____________
 
 - This level introduces a classic **SQL Injection (SQLi)** vulnerability. By reviewing the source code, something very important becomes clear:
 
-<img width="1868" height="755" alt="Captura de pantalla 2026-01-02 050410 2" src="https://github.com/user-attachments/assets/27dcc53f-36da-45ff-a6f7-24ac3f4a2825" />
+<img width="1868" height="755" alt="Captura de pantalla 2026-01-02 050410 2" src="https://github.com/user-attachments/assets/ca08b9ec-4fb2-43fa-99e1-02ddb35e0fbc" />
 
 - The core issue is that the application expects **more than two result rows** in order to display the password. This strongly suggests the use of a **`UNION SELECT`**, a common technique in SQL injection attacks to append additional rows to a query result.
 
-<img width="1137" height="387" alt="Captura de pantalla 2026-01-02 045606" src="https://github.com/user-attachments/assets/89e22882-9b85-4274-a097-98e960f1a49b" />
+<img width="1137" height="387" alt="Captura de pantalla 2026-01-02 045606" src="https://github.com/user-attachments/assets/236bdeaa-42d7-4fd0-beba-d90f277b1f37" />
 
 - By injecting a crafted `UNION SELECT`, the condition is met and the application returns the password:
 
-<img width="1095" height="300" alt="Captura de pantalla 2026-01-02 045511" src="https://github.com/user-attachments/assets/a929963c-c103-452a-a4f8-a625ee7a5314" />
+<img width="1095" height="300" alt="Captura de pantalla 2026-01-02 045511" src="https://github.com/user-attachments/assets/a63ef17e-2961-40eb-91a5-1ab19da3b025" />
 
 ```
 SdqIqBsFcz3yotlNYErZSZwblkm0lrvx
@@ -742,9 +720,7 @@ _______________________
 
 - This level introduces a **Blind SQL Injection (Boolean-based)** attack. To understand the vulnerability, the first step is reviewing how the application processes user input:
 
-<img width="928" height="729" alt="Captura de pantalla 2026-01-03 230158" src="https://github.com/user-attachments/assets/641f51f5-f259-45aa-a455-81efd1af2fcb" />
-
-
+<img width="928" height="729" alt="Captura de pantalla 2026-01-03 230158" src="https://github.com/user-attachments/assets/6e3e6725-483f-4e62-bcb3-532d861b0fee" />
 
 - From the source code, we can see that the application only checks whether a user **exists or not**, based on the SQL query result. This boolean response is enough to infer information indirectly.
 
@@ -853,8 +829,7 @@ Example:
 try:     numero = int(input("Enter a number: "))     print(f"{numero} is a valid number.") except ValueError:     print("That was not a number.")
 ```
 
-<img width="679" height="611" alt="Captura de pantalla 2026-01-03 225546" src="https://github.com/user-attachments/assets/3223a074-1faf-40aa-bad2-13702d2e6059" />
-
+<img width="679" height="611" alt="Captura de pantalla 2026-01-03 225546" src="https://github.com/user-attachments/assets/aa78b474-74df-4ec6-9565-21adbf6c3aec" />
 
 ```
 hPkjKYviLQctEW33QmuXL6eDVfMW4sGo
@@ -885,7 +860,7 @@ ____________________
 
 Let’s start by analyzing the source code:
 
-<img width="721" height="455" alt="Captura de pantalla 2026-01-05 034221" src="https://github.com/user-attachments/assets/fa33c268-0b43-4dff-a30c-7f917f4222a4" />
+<img width="721" height="455" alt="Captura de pantalla 2026-01-05 034221" src="https://github.com/user-attachments/assets/7f5cfe1e-f44b-4c42-acf0-37ceef738bad" />
 
 #layersofawebpage
 
@@ -934,9 +909,7 @@ The page normally searches for a word and prints results. We can use this behavi
     
 - an **indicator** (to detect true/false conditions).
     
-
-<img width="856" height="189" alt="Captura de pantalla 2026-01-05 051457" src="https://github.com/user-attachments/assets/826e7a10-d076-4d91-b891-99c3f29c746d" />
-
+<img width="856" height="189" alt="Captura de pantalla 2026-01-05 051457" src="https://github.com/user-attachments/assets/2599dc48-1d98-4b5b-a0b2-2334f18cd54e" />
 
 - We use the word **`Sunday`** as an anchor so the page behaves normally.
 
