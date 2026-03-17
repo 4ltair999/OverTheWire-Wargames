@@ -3,31 +3,35 @@ _____________
 
 ### Levels 0–20: Vulnerability-Focused Guide
 
-- [Level 0 — Basic HTTP Authentication](#level-0--basic-http-authentication)
-- [Level 1 — Client-Side Restrictions & Source Code Disclosure](#level-1--client-side-restrictions--source-code-disclosure)
-- [Level 2 — Hidden Files & Improper Access Control](#level-2--hidden-files--improper-access-control)
-- [Level 3 — Directory Enumeration & Security by Obscurity](#level-3--directory-enumeration--security-by-obscurity)
-- [Level 4 — Referer-Based Access Control Bypass](#level-4--referer-based-access-control-bypass)
-- [Level 5 — Cookie-Based Authorization Bypass](#level-5--cookie-based-authorization-bypass)
-- [Level 6 — Source Code Disclosure via Backup Files](#level-6--source-code-disclosure-via-backup-files)
-- [Level 7 — Path Traversal (Directory Traversal)](#level-7--path-traversal-directory-traversal)
-- [Level 8 — Encoding, Obfuscation & Reversible “Encryption”](#level-8--encoding-obfuscation--reversible-encryption)
-- [Level 9 — Command Injection (Basic OS Command Injection)](#level-9--command-injection-basic-os-command-injection)
-- [Level 10 — Filtered Command Injection (Blacklist Bypass)](#level-10--filtered-command-injection-blacklist-bypass)
-- [Level 11 — XOR Encryption Misuse & Key Reuse](#level-11--xor-encryption-misuse--key-reuse)
-- [Level 12 — File Upload Validation Bypass](#level-12--file-upload-validation-bypass)
-- [Level 13 — MIME-Type Trust & File Upload Bypass](#level-13--mime-type-trust--file-upload-bypass)
-- [Level 14 — Basic SQL Injection (Authentication Bypass)](#level-14--basic-sql-injection-authentication-bypass)
-- [Level 15 — Blind SQL Injection (Boolean-Based)](#level-15--blind-sql-injection-boolean-based)
-- [Level 16 — Command Injection via Server-Side Tool Chaining](#level-16--command-injection-via-server-side-tool-chaining)
-- [Level 17 — Time-Based Blind SQL Injection](#level-17--time-based-blind-sql-injection)
-- [Level 18 — Session Fixation & Predictable Session IDs](#level-18--session-fixation--predictable-session-ids)
-- [Level 19 — Encoded Session Identifiers (Hex-Encoding Misuse)](#level-19--encoded-session-identifiers-hex-encoding-misuse)
-- [Level 20 — Session Poisoning via Custom Session Storage](#level-20--session-poisoning-via-custom-session-storage)
+## Table of Contents
 
+- [Level 0 — Basic HTTP Authentication](#level-0)
+- [Level 1 — Client-Side Restrictions & Source Code Disclosure](#level-1)
+- [Level 2 — Hidden Files & Improper Access Control](#level-2)
+- [Level 3 — Robots Exclusion Protocol](#level-3)
+- [Level 4 — Referer-Based Access Control Bypass](#level-4)
+- [Level 5 — Cookie-Based Authorization Bypass](#level-5)
+- [Level 6 — Source Code Disclosure via Backup Files](#level-6)
+- [Level 7 — Path Traversal (Directory Traversal)](#level-7)
+- [Level 8 — Encoding, Obfuscation & Reversible Encryption](#level-8)
+- [Level 9 — Command Injection (Basic OS Command Injection)](#level-9)
+- [Level 10 — Filtered Command Injection (Blacklist Bypass)](#level-10)
+- [Level 11 — XOR Encryption Misuse & Key Reuse](#level-11)
+- [Level 12 — File Upload Validation Bypass](#level-12)
+- [Level 13 — MIME-Type Trust & File Upload Bypass](#level-13)
+- [Level 14 — Basic SQL Injection (Authentication Bypass)](#level-14)
+- [Level 15 — Blind SQL Injection (Boolean-Based)](#level-15)
+- [Level 16 — Command Injection via Server-Side Tool Chaining](#level-16)
+- [Level 17 — Time-Based Blind SQL Injection](#level-17)
+- [Level 18 — Session Fixation & Predictable Session IDs](#level-18)
+- [Level 19 — Encoded Session Identifiers (Hex-Encoding Misuse)](#level-19)
+- [Level 20 — Session Poisoning via Custom Session Storage](#level-20)
 
-
-__________________________________
+> [!IMPORTANT]
+> **Disclaimer:** This repository and the content provided within are for **educational and ethical hacking purposes only**. The information is intended to help security enthusiasts and professionals understand web security vulnerabilities. 
+> 
+> **Never** use these techniques against systems you do not have explicit, written permission to test. Unauthorized access to computer systems is illegal. The author is not responsible for any misuse of this information.
+__________________________________ 
 
 
 Natas teaches the basics of serverside web-security.
@@ -51,17 +55,17 @@ _____________
 
 To understand how the page handled sensitive information, the HTML was inspected using the browser’s **Element Inspector**. While reviewing the DOM, a search for relevant keywords such as `password` was performed. This revealed that the credential for the next level was directly embedded in the HTML.
 
-![[Captura de pantalla 2025-12-06 165642.png]]
+<img width="1258" height="609" alt="Captura de pantalla 2025-12-06 165642" src="https://github.com/user-attachments/assets/2163b6b1-1b48-416b-9525-7eec8c85fc52" />
 
 ```
 0nzCigAq7t2iALyvU9xcHlYN4MlkIwlq 
 ```
+
 ## Real-world application
 
 This level highlights how exposing sensitive information on the client side can lead to security issues. Any data sent to the browser should be considered accessible to the user.
 
 In real-world applications, credentials and secrets should never be included in client-side code. Security-sensitive data and logic must always be handled on the server.
-
 
 
 _____________________
@@ -74,8 +78,7 @@ This level follows the same approach as the previous one. Although right-click i
 
 By accessing the Developer Tools and inspecting the DOM, the password for the next level was found directly in the HTML content.
 
-![[Captura de pantalla 2025-12-06 171136.png]]
-
+<img width="1289" height="624" alt="Captura de pantalla 2025-12-06 171136" src="https://github.com/user-attachments/assets/f4bac8a4-5f58-4f3a-8b86-76b34334edf8" />
 
 ```
 TguMNxKo1DSa1tujBLuZJnDUlCcUAPlI
@@ -95,17 +98,15 @@ _________________________
 
 This level introduces a slightly higher difficulty, as it requires looking beyond the visible HTML content. While inspecting the page, an image reference was found that did not appear visually on the website, which made it suspicious.
 
-![[Captura de pantalla 2025-12-06 231035.png]]
-
+<img width="1457" height="585" alt="Captura de pantalla 2025-12-06 231035" src="https://github.com/user-attachments/assets/02bcb116-ba73-421b-a1ad-d3a130e9d381" />
 
 To understand what this image was, the path `files/pixel.png` was accessed directly. The image itself did not reveal any useful information. However, accessing the `/files` directory instead showed that directory listing was enabled.
 
-![[Captura de pantalla 2025-12-06 231646.png]]
+<img width="726" height="358" alt="Captura de pantalla 2025-12-06 231646" src="https://github.com/user-attachments/assets/71809160-5b38-44d4-900f-1316df8631d1" />
 
 Inside this directory, a file named `users.txt` was found. Opening this file revealed a list of usernames and passwords. One of these credentials corresponded to the next level.
 
-![[Captura de pantalla 2025-12-06 231843.png]]
-
+<img width="749" height="241" alt="Captura de pantalla 2025-12-06 231843" src="https://github.com/user-attachments/assets/96b2418a-fb1d-45fa-9089-ca7fac2e37b5" />
 
 Using this password to access the next level confirmed that it was valid.
 
@@ -124,10 +125,9 @@ _____________
 
 - This level presents us with the same message:
 
-
 ```
 There is nothing on this page
-````
+```
 
 - For this exercise, we need to understand an important concept: the **Robots Exclusion Protocol**, because the objective is to identify and access a file that is referenced there.
 
@@ -153,24 +153,21 @@ The Robots Exclusion Protocol is not obsolete, but its purpose is limited to **g
 
 As a pentester, you should assume that most websites you test will have a `robots.txt` file, and you should always check it early during reconnaissance.
 
-![[Captura de pantalla 2025-12-07 175333.png]]
+<img width="1060" height="115" alt="Captura de pantalla 2025-12-07 175333" src="https://github.com/user-attachments/assets/9f5e3a2a-d907-4ec5-8d66-461b6df76975" />
 
 - From the `robots.txt` file, we discover a hidden directory and navigate to:
-
 
 ```
 /s3cr3t/
 ```
 
-![[Captura de pantalla 2025-12-07 175603.png]]
+<img width="663" height="307" alt="Captura de pantalla 2025-12-07 175603" src="https://github.com/user-attachments/assets/a5fa5059-c6b8-4881-b718-e208723a5b21" />
 
 - Inside that directory, we find the file **users.txt**.
 
-
-![[Captura de pantalla 2025-12-07 175712.png]]
+<img width="726" height="125" alt="Captura de pantalla 2025-12-07 175712" src="https://github.com/user-attachments/assets/00257f99-9bb0-4d6e-9162-d1bb2aa1c0bc" />
 
 - The file contains the password for the next level:
-
 
 ```
 QryZXc2e0zahULdHrtHxzyYkj59kUxLQ
@@ -184,14 +181,13 @@ ____________
 
 ## Level 4
 
-![[Captura de pantalla 2025-12-13 043123.png]]
+<img width="602" height="194" alt="Captura de pantalla 2025-12-13 043123" src="https://github.com/user-attachments/assets/0e5d8c72-e4bc-4c08-b179-064e86f2350b" />
 
 ## Solution
 
 - This exercise requires us to understand the concept of the **Referer** HTTP header.
 
     What is the Referer?
-
 
 In HTTP, the **Referer** is an optional request header that indicates the address of the web page from which the request originated. The server can use this value to identify where the request comes from.
 
@@ -201,8 +197,7 @@ For example, consider a **password reset** page that includes a link to a social
 
 - Based on this, we need to capture the request and manipulate the **Referer** header, because this level requires the request to come from **natas5** in order to obtain the password.
 
-
-![[Captura de pantalla 2025-12-13 043332.png]]
+<img width="631" height="396" alt="Captura de pantalla 2025-12-13 043332" src="https://github.com/user-attachments/assets/a009a66b-67c5-48cc-a4ff-04e675a7f055" />
 
 - Simply changing `natas4` to `natas5` in the URL is not enough, and it will not work.
 - The practical objective of this level is to understand that **Burp Suite** allows us to intercept the HTTP request and modify the **Referer** header to `natas5`, as required by the application, in order to retrieve the password.
@@ -212,7 +207,6 @@ For example, consider a **password reset** page that includes a link to a social
 ```
 0n35PkggAPm2zbEpOU802c0x0Msn1ToK
 ```
-
 
 ## Real-world application
 
@@ -232,8 +226,7 @@ ____________
 
 - By checking the **browser storage**, I noticed that it was possible to manually change the value from `0` to `1`. After doing this, the application treated me as authenticated and revealed the password.
 
-
-![[Captura de pantalla 2025-12-14 021058.png]]
+<img width="1091" height="437" alt="Captura de pantalla 2025-12-14 021058" src="https://github.com/user-attachments/assets/8173a789-6f6d-453a-9a97-faa18d0cbe45" />
 
 ```
 0RoJwHdSKWFTYR5WuiAewauSuNaBXned
@@ -253,13 +246,11 @@ ____________
 
 - In this exercise, we need to inspect the page source using **Ctrl + U**.
 
-
-![[Captura de pantalla 2025-12-14 053320.png]]
+<img width="1063" height="555" alt="Captura de pantalla 2025-12-14 053320" src="https://github.com/user-attachments/assets/ee3308da-95e8-4e47-a6a6-febe246a082b" />
 
 - From the source code, we find a reference to a specific file. When we add this fragment to the main URL, the following content appears:
 
-
-![[Captura de pantalla 2025-12-14 054102.png]]
+<img width="1015" height="553" alt="Captura de pantalla 2025-12-14 054102" src="https://github.com/user-attachments/assets/9313d143-b7ee-4d70-ba39-aad4e8303fe2" />
 
 ```
 FOEIUWGHFEEUHOFUOIU
@@ -267,9 +258,7 @@ FOEIUWGHFEEUHOFUOIU
 
 - If we take this value and use it in the search field, it reveals the password for the next level.
 
-
-![[Captura de pantalla 2025-12-14 052835.png]]
-
+<img width="598" height="213" alt="Captura de pantalla 2025-12-14 052835" src="https://github.com/user-attachments/assets/d6bbcb21-d894-4071-a193-94f33237830f" />
 
 ```
 bmg8SvU1LizuWjx3y7xkNERkHxGre0GS
@@ -295,13 +284,11 @@ hint: password for webuser natas8 is in /etc/natas_webpass/natas8
 
 - After reviewing the page in more detail, I noticed something relevant: an **`href`** parameter. Taking into account how it works, and the fact that the main page contains two redirection points, we can test whether this **`href`** can be abused.
 
-
-![[Captura de pantalla 2025-12-14 064249.png]]
+<img width="962" height="490" alt="Captura de pantalla 2025-12-14 064249" src="https://github.com/user-attachments/assets/16d336c9-1c0e-42f4-a81a-a565ad4dd781" />
 
 - Let’s test whether this **`href`** is properly sanitized by placing the password path we discovered into the **home** path.
 
-
-![[Captura de pantalla 2025-12-14 063517.png]]
+<img width="1092" height="695" alt="Captura de pantalla 2025-12-14 063517" src="https://github.com/user-attachments/assets/e7ee33d4-07d6-4c34-8c52-d15e80485586" />
 
 - And it worked. The application redirected us directly to the password:
 
@@ -323,8 +310,7 @@ ______________
 
 - In this exercise, we are led to inspect the page source code.
 
-
-![[Captura de pantalla 2025-12-14 235920.png]]
+<img width="1615" height="770" alt="Captura de pantalla 2025-12-14 235920" src="https://github.com/user-attachments/assets/9872af90-97f1-4c7a-8705-f34cccaf417f" />
 
 - It is important to understand how this script works.
 
@@ -351,14 +337,14 @@ ______________
 ZE1ck82lmdGIoErlhQgWND6j2Wzz6b6t
 ```
 
-![[Captura de pantalla 2025-12-15 000632.png]]
+<img width="894" height="570" alt="Captura de pantalla 2025-12-15 000632" src="https://github.com/user-attachments/assets/fdf2144b-3da4-45e8-b556-c7af77df94d1" />
 
-![[Captura de pantalla 2025-12-15 000326.png]]
+<img width="345" height="74" alt="Captura de pantalla 2025-12-15 000326" src="https://github.com/user-attachments/assets/a436db58-b2b9-46c0-874d-0b27ee891489" />
 
 - If we submit this value directly in the main page, the application reveals the password.
 
+<img width="898" height="325" alt="Captura de pantalla 2025-12-14 231742 1" src="https://github.com/user-attachments/assets/8a1a46f2-079e-4a32-8ba8-3c1aa957a125" />
 
-![[Captura de pantalla 2025-12-14 231742 1.png]]
 
 ```
 ZE1ck82lmdGIoErlhQgWND6j2Wzz6b6t
@@ -376,8 +362,9 @@ ____________________
 
 - In this exercise, we need to pay close attention to how the script in the source code works:
 
+<img width="646" height="267" alt="Captura de pantalla 2025-12-16 033406" src="https://github.com/user-attachments/assets/f62fe755-75c8-4cfb-99c7-aaa3fb0be4fc" />
 
-![[Captura de pantalla 2025-12-16 033406.png]]
+
 
 - This script shows us that whatever is entered in the search field is searched within a dictionary. However, the most important part is the use of **`passthru()`**. We need to understand how it works and why it represents a critical security issue.
 ### passthru
@@ -397,8 +384,9 @@ From a security perspective, user input should never be passed directly to `pass
 
 - And it works.
 
+<img width="936" height="463" alt="Captura de pantalla 2025-12-16 040001" src="https://github.com/user-attachments/assets/ab1037b0-1aac-4ac4-8030-2c4f580105a6" />
 
-![[Captura de pantalla 2025-12-16 040001.png]]
+
 
 ```
 t7I5VHvpa14sJTUGV0cbEsbYfFP2dmOu
@@ -417,15 +405,16 @@ __________________
 
 - In this case, certain characters are filtered, which makes direct command execution more difficult.
 
+<img width="520" height="255" alt="Captura de pantalla 2025-12-16 042734" src="https://github.com/user-attachments/assets/cf06b20a-e564-4965-90f5-771b1736e409" />
 
-![[Captura de pantalla 2025-12-16 042734.png]]
 
 - To solve this exercise, we need to rely on characters such as **`.*`**, which are not escaped. These characters have an important meaning: they match files in the **current directory** or files that meet specific pattern requirements.
 
 - By using `.*`, we can see that the application lists the following information:
 
+<img width="769" height="393" alt="Pasted image 20251217025149" src="https://github.com/user-attachments/assets/803031ea-d78a-4758-900a-e93e6cee5097" />
 
-![[Pasted image 20251217025149.png]]
+
 
 - Taking advantage of this behavior, we can try to list the password file using the following payload:
     
@@ -433,7 +422,8 @@ __________________
 .* /etc/natas_webpass/natas11
 ```
 
-![[Captura de pantalla 2025-12-17 025435.png]]
+<img width="834" height="414" alt="Captura de pantalla 2025-12-17 025435" src="https://github.com/user-attachments/assets/66162df3-54e7-4533-8194-983fce7c2161" />
+
 
 - And it works.
 
@@ -489,7 +479,8 @@ This is important because:
 
 ## Analysis
 
-![[Pasted image 20251223224136.png]]
+<img width="1383" height="727" alt="Pasted image 20251223224136" src="https://github.com/user-attachments/assets/22c0e812-1fbc-40df-ab65-4cc0ef9b560b" />
+
 
 From the code we deduce:
 
@@ -501,11 +492,13 @@ From the code we deduce:
 
 - The plaintext is JSON-decoded on the server (`json_decode`), meaning the structure matters.
 
-![[Captura de pantalla 2025-12-23 233411.png]]
+<img width="1313" height="231" alt="Captura de pantalla 2025-12-23 233411" src="https://github.com/user-attachments/assets/90a2c523-076f-4d5f-9fe3-dee9d7ee0f21" />
+
 
 - The **ciphertext** is retrieved from the cookie, which is **Base64-encoded**.
 
-![[Captura de pantalla 2025-12-24 065709.png]]
+<img width="1666" height="847" alt="Captura de pantalla 2025-12-24 065709" src="https://github.com/user-attachments/assets/f8d2856a-1a03-4e20-ad3e-9c5bd1592ad1" />
+
 
 ### Extracting the key (CyberChef)
 
@@ -543,12 +536,13 @@ Now that we have the key:
 
 4. Refresh the page.
 
+<img width="1483" height="770" alt="Captura de pantalla 2025-12-24 071328" src="https://github.com/user-attachments/assets/32653b87-27b6-4014-940a-b706c8f9d2e8" />
 
-![[Captura de pantalla 2025-12-24 071328.png]]
 
 This reveals the password:
 
-![[Captura de pantalla 2025-12-24 064952.png]]
+<img width="908" height="305" alt="Captura de pantalla 2025-12-24 064952" src="https://github.com/user-attachments/assets/926f9603-c1f4-4350-97a5-6fb47b63793d" />
+
 
 ```
 yZdkjAYZRd3R7tq7T5kXMjMJlOIkzDeB
@@ -581,12 +575,14 @@ ___________
 
 - This exercise shows how file uploads can become a serious security risk when they are not properly validated.
 
+<img width="1424" height="519" alt="Captura de pantalla 2025-12-27 124241" src="https://github.com/user-attachments/assets/0a9002e0-af33-4e4b-963f-6a1ac895722c" />
 
-![[Captura de pantalla 2025-12-27 124241.png]]
+
 
 - The application allows us to upload a file that is supposedly restricted to the `.jpg` extension. However, inspecting the source code reveals something more interesting.
 
-![[Captura de pantalla 2025-12-27 124639.png]]
+<img width="854" height="723" alt="Captura de pantalla 2025-12-27 124639" src="https://github.com/user-attachments/assets/fd7e853f-26f9-4d3d-b116-1b719ebe6b6b" />
+
 
 - From the code, we can see that the backend is using **PHP** and that the filename is taken directly from `$_POST["filename"]` and concatenated into `$target_path` **without server-side validation**. This results in an **Unrestricted File Upload** vulnerability.
 - Since the server executes PHP, we can upload a malicious file by intercepting the request and changing the extension from `.jpg` to `.php`.
@@ -599,16 +595,19 @@ ___________
 - `passthru()` is ideal here because it sends the command output directly to the browser without truncating or processing it, which is useful when reading sensitive files like passwords.
 - Because the application forces the `.jpg` extension, we intercept the upload request using **Burp Suite** and modify the extension manually.
 
-![[Captura de pantalla 2025-12-27 125708.png]]
+<img width="756" height="648" alt="Captura de pantalla 2025-12-27 125708" src="https://github.com/user-attachments/assets/0d70c5bb-c040-40b8-bf2b-ffa82f3b43cb" />
+
 
 - After forwarding the request, we open the uploaded file using **“Show response in browser”**, which confirms that the file was executed as PHP.
 
-![[Captura de pantalla 2025-12-27 130317.png]]
+<img width="454" height="19" alt="Captura de pantalla 2025-12-27 130317" src="https://github.com/user-attachments/assets/f56f0289-a31a-4c5a-abf5-8b336184f367" />
+
 
 - Now we execute a command through the web shell to read the password file.
 
 
-![[Captura de pantalla 2025-12-27 130509.png]]
+<img width="1040" height="117" alt="Captura de pantalla 2025-12-27 130509" src="https://github.com/user-attachments/assets/8881235e-757b-463c-83de-034480729758" />
+
 
 `trbs5pCjCrkuSknBBKHhaBxq6Wm1j3LC`
 
@@ -624,7 +623,8 @@ ______________
 
 - This level uses the same upload functionality as the previous one, but with a small and important change in the source code:
 
-![[Captura de pantalla 2025-12-27 162028.png]]
+<img width="903" height="445" alt="Captura de pantalla 2025-12-27 162028" src="https://github.com/user-attachments/assets/557cb547-0c91-4c3f-81e3-37c8646e55c0" />
+
 
 - The application now uses `exif_imagetype()`, which validates a file by checking its **magic bytes** instead of trusting the file extension.
 
@@ -649,7 +649,8 @@ ffd8 ffe0
 - The correct approach is to upload a **real image**, intercept the request, and then modify the payload in **Burp Suite**.
 
 
-![[Captura de pantalla 2025-12-31 165145.png]]
+<img width="908" height="556" alt="Captura de pantalla 2025-12-31 165145" src="https://github.com/user-attachments/assets/2e7fb16b-c081-4d67-918f-d6a832075753" />
+
 
 - Breaking this down:
     
@@ -665,12 +666,12 @@ ffd8 ffe0
 
 - For comparison, this is how the request looks before modification:
 
-
-![[Captura de pantalla 2025-12-31 170541.png]]
+<img width="999" height="630" alt="Captura de pantalla 2025-12-31 170541" src="https://github.com/user-attachments/assets/828bf19f-a6d5-42eb-8cce-1babb9d7a5b4" />
 
 - Once uploaded, executing the file gives us the password:
 
-![[Captura de pantalla 2025-12-31 172003.png]]
+<img width="794" height="207" alt="Captura de pantalla 2025-12-31 172003" src="https://github.com/user-attachments/assets/8f037ade-4eef-4323-8e90-c4aab326c069" />
+
 
 ```
 z3UYcr4v4uBpeX8f7EZbMHlzK4UR2XtQ
@@ -689,17 +690,15 @@ _____________
 
 - This level introduces a classic **SQL Injection (SQLi)** vulnerability. By reviewing the source code, something very important becomes clear:
 
-![[Captura de pantalla 2026-01-02 050410 2.png]]
+<img width="1868" height="755" alt="Captura de pantalla 2026-01-02 050410 2" src="https://github.com/user-attachments/assets/27dcc53f-36da-45ff-a6f7-24ac3f4a2825" />
 
 - The core issue is that the application expects **more than two result rows** in order to display the password. This strongly suggests the use of a **`UNION SELECT`**, a common technique in SQL injection attacks to append additional rows to a query result.
 
-
-![[Captura de pantalla 2026-01-02 045606.png]]
+<img width="1137" height="387" alt="Captura de pantalla 2026-01-02 045606" src="https://github.com/user-attachments/assets/89e22882-9b85-4274-a097-98e960f1a49b" />
 
 - By injecting a crafted `UNION SELECT`, the condition is met and the application returns the password:
 
-
-![[Captura de pantalla 2026-01-02 045511.png]]
+<img width="1095" height="300" alt="Captura de pantalla 2026-01-02 045511" src="https://github.com/user-attachments/assets/a929963c-c103-452a-a4f8-a625ee7a5314" />
 
 ```
 SdqIqBsFcz3yotlNYErZSZwblkm0lrvx
@@ -742,8 +741,9 @@ _______________________
 
 - This level introduces a **Blind SQL Injection (Boolean-based)** attack. To understand the vulnerability, the first step is reviewing how the application processes user input:
 
+<img width="928" height="729" alt="Captura de pantalla 2026-01-03 230158" src="https://github.com/user-attachments/assets/641f51f5-f259-45aa-a455-81efd1af2fcb" />
 
-![[Captura de pantalla 2026-01-03 230158.png]]
+
 
 - From the source code, we can see that the application only checks whether a user **exists or not**, based on the SQL query result. This boolean response is enough to infer information indirectly.
 
@@ -852,8 +852,8 @@ Example:
 try:     numero = int(input("Enter a number: "))     print(f"{numero} is a valid number.") except ValueError:     print("That was not a number.")
 ```
 
+<img width="679" height="611" alt="Captura de pantalla 2026-01-03 225546" src="https://github.com/user-attachments/assets/3223a074-1faf-40aa-bad2-13702d2e6059" />
 
-![[Captura de pantalla 2026-01-03 225546.png]]
 
 ```
 hPkjKYviLQctEW33QmuXL6eDVfMW4sGo
@@ -877,14 +877,14 @@ hPkjKYviLQctEW33QmuXL6eDVfMW4sGo
 ____________________
 
 
-# Level 16
+# Level 16 
 
 - This level introduces a **Blind Injection**, but unlike previous levels, it does **not target a database**. Instead, the injection happens directly in **PHP**, combined with several critical concepts that are essential to understand.
 
 
 Let’s start by analyzing the source code:
 
-![[Captura de pantalla 2026-01-05 034221.png]]
+<img width="721" height="455" alt="Captura de pantalla 2026-01-05 034221" src="https://github.com/user-attachments/assets/fa33c268-0b43-4dff-a30c-7f917f4222a4" />
 
 #layersofawebpage
 
@@ -934,7 +934,8 @@ The page normally searches for a word and prints results. We can use this behavi
 - an **indicator** (to detect true/false conditions).
     
 
-![[Captura de pantalla 2026-01-05 051457.png]]
+<img width="856" height="189" alt="Captura de pantalla 2026-01-05 051457" src="https://github.com/user-attachments/assets/826e7a10-d076-4d91-b891-99c3f29c746d" />
+
 
 - We use the word **`Sunday`** as an anchor so the page behaves normally.
 
@@ -1043,12 +1044,13 @@ Understanding where data travels is crucial during audits.
 
 _______
 
-# Natas 17
+# Level 17
 
 - In this exercise, we return to **databases**, and in fact the application uses the **same code as Level 14–15**, with one very important exception:  
     when checking whether a user exists, the responses in the code are **commented out**. This makes the challenge harder because there is **no visible output** to tell us whether a condition is true or false.
 
-![[Captura de pantalla 2026-01-06 045945.png]]
+<img width="879" height="699" alt="Captura de pantalla 2026-01-06 045945" src="https://github.com/user-attachments/assets/260aa4ee-f9d7-4d17-97de-6d6ecf243580" />
+
 
 - My first approach was to try **`SELECT SLEEP(10)`** in order to use **time** as a factor to determine whether a request was correct or not, but this did not work as expected.
 
@@ -1185,8 +1187,9 @@ This script takes a long time to run, and understanding its **control flow** is 
     
     - If a network or connection error occurs, the script waits briefly and retries instead of failing completely
     
+<img width="592" height="789" alt="Captura de pantalla 2026-01-06 210745" src="https://github.com/user-attachments/assets/56e4098d-840e-4568-8504-2327b85bc641" />
 
-![[Captura de pantalla 2026-01-06 210745.png]]
+
 
 ## Solution
 
@@ -1212,14 +1215,14 @@ I stopped looking for **exact times** and started observing **behavioral differe
 
 ____________
 
-# Natas 18
+# Level 18
 
 - This exercise presents a scenario where we work with **cookies** and, more importantly, **`$_SESSION`** (sessions in general). Let’s analyze the source code:
 
+<img width="1010" height="611" alt="Pasted image 20260111145434" src="https://github.com/user-attachments/assets/211c6579-3d5b-4bb4-9af1-9f4ce1432f51" />
 
-![[Pasted image 20260111145434.png]]
+<img width="1140" height="630" alt="Captura de pantalla 2026-01-11 145752" src="https://github.com/user-attachments/assets/d17bebb3-abc2-426a-9af2-6479d3d394ba" />
 
-![[Captura de pantalla 2026-01-11 145752.png]]
 
 - In the first part of the code, we identify three functions. Let’s go one by one:
 
@@ -1348,14 +1351,14 @@ tnwER7PdfWkxsG4FNWUtoAZ9VyZTJqJr
 
 ________________
 
-# Natas 19
+# Level 19
 
 - This exercise presents essentially the same source code as the previous level, but with a small change: the server expects the session identifier to be **hex-encoded**, which does **not** provide real security.
     
+<img width="504" height="94" alt="Captura de pantalla 2026-01-11 230443" src="https://github.com/user-attachments/assets/a9a823c8-f2f1-4378-974a-e440458bd411" />
 
-![[Captura de pantalla 2026-01-11 230443.png]]
+<img width="704" height="870" alt="Captura de pantalla 2026-01-11 165105" src="https://github.com/user-attachments/assets/6c89ff92-913c-4854-a289-45391d8a5714" />
 
-![[Captura de pantalla 2026-01-11 165105.png]]
 
 - This means that simply looping from 1 to 640 like in the previous level will **no longer work directly**, because we now need to account for the HEX encoding.
     
@@ -1392,8 +1395,8 @@ for i in range(1, 641):
 
 - This script works and produces the expected result:
 
+<img width="808" height="415" alt="Captura de pantalla 2026-01-12 151429 1" src="https://github.com/user-attachments/assets/28bcc7ec-239e-44d5-918f-7ccc84b7f499" />
 
-![[Captura de pantalla 2026-01-12 151429 1.png]]
 
 - To convert a value to HEX, we can use:
 
@@ -1411,8 +1414,8 @@ print(hex_encoded)
 
 - Entering this value as the cookie proves that it works:
 
+<img width="1093" height="589" alt="Captura de pantalla 2026-01-12 150626" src="https://github.com/user-attachments/assets/66078615-d31c-452c-ac3a-62e6501d0bfa" />
 
-![[Captura de pantalla 2026-01-12 150626.png]]
 
 - ✅ Password obtained:
 
@@ -1442,16 +1445,15 @@ p5mCvP7GS2K6Bmt3gqhM2Fc1A5T8MVyw
 
 ___________
 
-# Natas 20
+# Level 20
 
 - This exercise presents a scenario closer to **real-life situations**, where there are no obvious hints or payloads showing where the vulnerability is. It requires a **deep understanding of the source code** to spot subtle details that can have a major impact. Let's examine the code:
 
+<img width="1728" height="769" alt="Pasted image 20260113210954" src="https://github.com/user-attachments/assets/00971555-308d-436e-a90f-cee412f02e33" />
 
-![[Pasted image 20260113210954.png]]
+<img width="838" height="747" alt="Captura de pantalla 2026-01-13 211634" src="https://github.com/user-attachments/assets/1afea8e6-2d25-4199-82d4-06fcaceb1a90" />
 
-![[Captura de pantalla 2026-01-13 211634.png]]
-
-![[Captura de pantalla 2026-01-13 211757.png]]
+<img width="729" height="631" alt="Captura de pantalla 2026-01-13 211757" src="https://github.com/user-attachments/assets/5db7f850-1713-476b-b7a1-c0978c40fc6a" />
 
 - I highlighted certain parts that are critical and will explain them step by step.
     
@@ -1526,8 +1528,8 @@ This exercise introduces several critical concepts:
     
     - Since the `admin` flag in the session is now set to `1`, the page prints the credentials.
         
+<img width="1023" height="368" alt="Captura de pantalla 2026-01-13 221726" src="https://github.com/user-attachments/assets/231f3daa-0ae9-4477-b1a4-6337513950fc" />
 
-![[Captura de pantalla 2026-01-13 221726.png]]
 
 - Highlighted in yellow: confirmation of the **session** and the **PHPSESSID**:
     
@@ -1547,6 +1549,9 @@ BPhv63cKE1lkQl04cE5CuFTzXe15NfiH
 
 
 _______________________________________
+
+
+
 
 
 
