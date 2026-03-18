@@ -1,21 +1,4 @@
 
-___________________
-
-- Maquinas para practicar.
-
-     Anonymous (try hackme)
-     Simple CTF (try hackme)
-
-______________
-
-### Sintaxis
-sshpass -p 3QJ3TgzHDq ssh leviathan1@leviathan.labs.overthewire.org -p 2223
-
-________________
-
-#### Pagina util
-https://gtfobins.org/
-
 _________________
 
 
@@ -54,20 +37,3 @@ Se encarga de interceptar las **llamadas al sistema** (syscalls). Es el nivel m�
 
 
 
-### ¿Qué es un binario?
-
-Un **binario** (o **archivo binario**) es un archivo que contiene datos en formato binario, es decir, en ceros y unos, que la computadora puede ejecutar directamente. A diferencia de los archivos de texto (como .txt), los binarios no están diseñados para ser leídos por humanos, sino por máquinas.
-
-**¿Es un archivo?** Sí, un binario es un tipo de archivo. Por ejemplo, los programas que instalas en tu computadora (como un navegador o un juego) suelen ser archivos binarios.
-
-
-### ¿Qué puedes hacer con un binario?
-
-- **Ejecutar programas:** Los binarios son los archivos que "corren" los programas en tu computadora.
-- **Almacenar datos complejos:** Imágenes, videos, música, etc., también son archivos binarios, pero no son ejecutables.
-- **Contener instrucciones:** Los binarios ejecutables contienen instrucciones que la CPU de tu computadora sigue para realizar tareas.
-
-**¿Puede un binario "correr imágenes"?** No exactamente. Las imágenes son archivos binarios, pero no son ejecutables. Un binario ejecutable puede ser un programa que abre y muestra imágenes, pero la imagen en sí no se "corre".
-
-_____________________
-## TOCTOU
