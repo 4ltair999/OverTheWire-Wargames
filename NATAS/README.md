@@ -2,7 +2,7 @@ _____________
 ## Natas — Web Security Wargame (OverTheWire)
 
 ### Levels 0–20: Vulnerability-Focused Guide
-
+ 
 ## Table of Contents
 
 - [Level 0 — Basic HTTP Authentication](#level-0)
